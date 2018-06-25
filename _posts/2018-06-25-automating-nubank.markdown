@@ -9,16 +9,16 @@ Quem gosta de passar uma noite todo mês revisando gastos e preenchendo planilha
 
 O que eu gostaria na verdade é que toda a minha vida financeira fosse **automatizada**. Mas vamos lá, um passo de cada vez.
 
-Nesse post, vou mostrar como usar a API do Nubank para ir preenchendo um canal do meu Slack pessoal, que no futuro terá reports diários do que anda acontecendo com o meu dinheiro.
+Nesse post, vou mostrar como usar a API do Nubank para ir preenchendo um canal do meu Slack pessoal, que no futuro poderá ter reports diários do que anda acontecendo com o meu dinheiro.
 
 
 ### Passo 1: explorando a API do Nubank
 
-Se você tem o Nubank, pode ver os dados do seu cartão no [https://app.nubank.com.br/](https://app.nubank.com.br/). Logando, você pode ver uma interface com o histórico de transações, que no caso, é o que queremos fazer pooling.
+Se você tem o Nubank, pode ver os dados do seu cartão no [https://app.nubank.com.br/](https://app.nubank.com.br/). Logando, você pode ver uma interface com o histórico de transações, que no caso, é o que queremos fazer scraping.
 
 ![Nubank WepApp]({{ "/assets/nubank_webapp.png" | absolute_url }})
 
-Como há de se esperar no Nubank, eles fornecem uma API restful stateless, com auth per-request e boas práticas de hypermedia, o que vai facilitar bastante nosso trabalho. Quem já tentou fazer scraping sobre uma API stateful sabe o drama que é 😵
+A API por trás é restful e stateless, com auth per-request e boas práticas de hypermedia, o que vai facilitar bastante nosso trabalho. Quem já tentou fazer scraping sobre uma API stateful sabe o drama que é 😵
 
 Já na tela de login, percebemos que a primeira chamada é para a rota:
 
@@ -40,7 +40,23 @@ Casa rota aponta para um endereço de um proxy `https://prod-s0-webapp-proxy.nub
 
 A primeira parte (antes do `.`) é um prefixo para o proxy vigente, e a segunda, é um endereço codado em base64: `https://prod-global-auth.nubank.com.br/api/token`.
 
-Fazendo uma requisição POST com nosso usuário e senha para essa rota de token, o backend responde no Authorization Header com o nosso Token que vamos durante o scraping, e no body uma série de outras rotas - e entre elas, a que nos interessa, `events`.
+Fazendo uma requisição POST com nosso usuário e senha para essa rota de token, o backend responde com o Token de acesso que vamos durante o scraping, e no body uma série de outras rotas - e entre elas, a que nos interessa neste post, `events`.
+
+{% highlight javascript %}
+{
+  "access_token": "...",
+  "_links": {
+    "account": {
+      "href": "..."
+    },
+    "events": {
+      "href": "..."
+    },
+    ...
+  },
+  ...
+}
+{% endhighlight %}
 
 Programando esse fluxo de API temos como resultado nosso cliente "quebradiço", que eu subi neste repositório: [https://github.com/rhnasc/nubank_api_exporter](https://github.com/rhnasc/nubank_api_exporter). 
 
@@ -67,13 +83,13 @@ func FilterEventsByTimeRange(events []*nubank.Event, from time.Time, to time.Tim
 
 Com o resultado desse filtro, notificarei o meu Slack com [esta package](github.com/ashwanthkumar/slack-go-webhook).
 
-A package para o slack nada mais é que um wrapper sobre o protocolo de webhooks do Slack. Preciso então adicionar a integração no meu Slack chamada **Incoming WebHook**.
+A package para o slack nada mais é que um wrapper sobre o protocolo de webhooks do Slack. Preciso então adicionar a integração no meu Slack chamada **Incoming WebHooks**.
 
 ![App Directory]({{ "/assets/app_directory.png" | absolute_url }})
 
 O slack nos dará então uma URL de webhooks que poderemos postar num canal. Estarei postando em um chamado `#nubank`.
 
-O resultado então será este, mostrando no Slack uma transação que eu fiz nas últimas 24 horas:
+Ao rodar a aplicação, o resultado será este, mostrando no Slack uma transação que eu fiz nas últimas 24 horas:
 
 ![App Directory]({{ "/assets/automate_all_the_things.png" | absolute_url }})
 
@@ -112,15 +128,15 @@ func main() {
 
 {% endhighlight %}
 
-Diferente de outros linguagens de script, a Amazon pede que você suba o código já compilado. Então buildamos o código para um SO linux e zipamos para subir ao AWS Lambda:
+Diferente de outras linguagens de script, a Amazon não vai um editor online para você mexer no seu código. Você terá que compilar e subir apenas um executável. Então buildamos o código para um SO linux e zipamos para subir na dashboard do Lambda:
 
 `GOOS=linux go build -o main && zip deployment.zip main`
 
-Usando a dashboard, podemos criar um teste para o lambda que acabamos de configurar. Se tudo der certo, agora o nosso robô está rodando na nuvem, e receberemos novamente o registro da transação pelo canal do Slack :)
+Usando a dashboard, podemos criar um teste para o lambda que acabamos de configurar. Se tudo der certo, agora o nosso código vai ser rodado na nuvem, e receberemos novamente o registro da transação pelo canal do Slack :)
 
 ![Lambda]({{ "/assets/aws_lambda_success.png" | absolute_url }})
 
-### O que fazer com isso?
+### Great Success
 
 No Slack posso colocar controles interativos para classificar as compras de acordo com minhas categorias.
 
