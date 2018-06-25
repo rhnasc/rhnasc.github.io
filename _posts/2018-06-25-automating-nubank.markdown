@@ -36,7 +36,7 @@ Que responde algo como:
 }
 {% endhighlight %}
 
-Cada rota aponta para um endereço de um proxy `https://prod-s0-webapp-proxy.nubank.com.br`, seguido de uma URL. No caso de login, por exemplo, `/api/proxy/AJxL5L2Tx4PB-W6VD1S2xp14EDQ.aHR0cHM6Ly9wcm9kLWdsb2JhbC1hdXRoLm51YmFuay5jb20uYnIvYXBpL3Rva2Vu`.
+Cada rota aponta para o endereço de um proxy `https://prod-s0-webapp-proxy.nubank.com.br`, seguido de um URI. No caso de login, por exemplo, o endereço completo fica `https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/AJxL5L2Tx4PB-W6VD1S2xp14EDQ.aHR0cHM6Ly9wcm9kLWdsb2JhbC1hdXRoLm51YmFuay5jb20uYnIvYXBpL3Rva2Vu`.
 
 A primeira parte (antes do `.`) é um prefixo para o proxy vigente, e a segunda, é um endereço codado em base64: `https://prod-global-auth.nubank.com.br/api/token`.
 
