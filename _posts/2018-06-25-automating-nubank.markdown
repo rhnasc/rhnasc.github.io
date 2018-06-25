@@ -112,7 +112,7 @@ func main() {
 
 {% endhighlight %}
 
-Buildamos então o código para um SO linux e zipamos para quando formos subir ao AWS Lambda:
+Diferente de outros linguagens de script, a Amazon pede que você suba o código já compilado. Então buildamos o código para um SO linux e zipamos para subir ao AWS Lambda:
 
 `GOOS=linux go build -o main && zip deployment.zip main`
 
