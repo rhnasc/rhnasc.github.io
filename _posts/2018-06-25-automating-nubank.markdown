@@ -40,7 +40,7 @@ Cada rota aponta para o endereço de um proxy `https://prod-s0-webapp-proxy.nuba
 
 A primeira parte (antes do `.`) é um prefixo para o proxy vigente, e a segunda, é um endereço codado em base64: `https://prod-global-auth.nubank.com.br/api/token`.
 
-Fazendo uma requisição POST com nosso usuário e senha para essa rota de token, o backend responde com o Token de acesso que vamos durante o scraping, e no body uma série de outras rotas - e entre elas, a que nos interessa neste post, `events`.
+Fazendo uma requisição POST com nosso usuário e senha para essa rota de token, o backend responde com o Token de acesso que vamos usar durante o scraping, e no body uma série de outras rotas - e entre elas, a que nos interessa neste post, `events`.
 
 {% highlight javascript %}
 {
@@ -58,7 +58,7 @@ Fazendo uma requisição POST com nosso usuário e senha para essa rota de token
 }
 {% endhighlight %}
 
-Programando esse fluxo de API temos como resultado nosso cliente "quebradiço", que eu subi neste repositório: [https://github.com/rhnasc/nubank_api_exporter](https://github.com/rhnasc/nubank_api_exporter). 
+Programando esse fluxo de API, temos como resultado nosso cliente "quebradiço", que eu subi neste repositório: [https://github.com/rhnasc/nubank_api_exporter](https://github.com/rhnasc/nubank_api_exporter). 
 
 ### Passo 2: notificando o Slack sobre últimas transações
 
@@ -128,11 +128,11 @@ func main() {
 
 {% endhighlight %}
 
-Diferente de outras linguagens de script, a Amazon não vai um editor online para você mexer no seu código. Você terá que compilar e subir apenas um executável. Então buildamos o código para um SO linux e zipamos para subir na dashboard do Lambda:
+Diferente de outras linguagens de script, a Amazon não disponibiliza um editor online para você mexer no seu código. Você terá que compilar e subir apenas um executável. Então buildamos o código para um SO linux e zipamos para subir na dashboard do Lambda:
 
 `GOOS=linux go build -o main && zip deployment.zip main`
 
-Usando a dashboard, podemos criar um teste para o lambda que acabamos de configurar. Se tudo der certo, agora o nosso código vai ser rodado na nuvem, e receberemos novamente o registro da transação pelo canal do Slack :)
+Usando a dashboard, podemos criar um teste para o lambda que acabamos de configurar. Se tudo der certo, agora o nosso código vai rodar na nuvem, e receberemos novamente o registro da transação pelo canal do Slack :)
 
 ![Lambda]({{ "/assets/aws_lambda_success.png" | absolute_url }})
 
