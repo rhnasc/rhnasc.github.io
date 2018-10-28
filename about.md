@@ -4,13 +4,13 @@ title: About
 permalink: /about/
 ---
 
-**Mini-Resume**
+**Mini Resume**
 
 👨‍💻 Software Engineer @ [In Loco](https://www.linkedin.com/company/inlocoglobal/)
 
-👶 Learned a lot @ [Sinfo](https://www.linkedin.com/company/sinfoufrn/), [Nimbledroid](https://www.linkedin.com/company/nimbledroid/), [Codeminer42](https://www.linkedin.com/company/codeminer42/)
+👶 Learned a lot @ [Codeminer42](https://www.linkedin.com/company/codeminer42/), [Nimbledroid](https://www.linkedin.com/company/nimbledroid/), [Sinfo](https://www.linkedin.com/company/sinfoufrn/)
 
-🎓 Proudly an alumni @ [UFRN](http://www.ufrn.br/), [Columbia](https://www.columbia.edu/)
+🎓 Proudly an alumni @ [UFRN](http://www.ufrn.br/), [Columbia University](https://www.columbia.edu/)
 
 **Social networks**
 
