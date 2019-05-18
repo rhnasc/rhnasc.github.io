@@ -19,7 +19,7 @@ However, as in any other activity, eventually interest wears out. You can't get 
 
 ### Invest on your workflow ###
 
-I'll start by the most underrated point.
+I'll start an often underrated point.
 
 The term **workflow** comprises all the whole pipeline of things you systematically do in order to move something from planned to done.
 
@@ -33,7 +33,7 @@ The problem of workflows is, they grow in complexity unexpectedly fast, sometime
 
 Yeah, although it is true that tedious workflows can be overcome by willpower, that's probably the worst thing you could ever spend your willpower with. Workflows should never be *in your way*, rather, they should help you *to get things done*.
 
-As you are given ever more complex tasks, you should defend SIMPLICITY in the same proportion. This way you can avoid some motivation-draining monsters to appear.
+As you are given ever more complex tasks, you should defend SIMPLICITY in the same proportion. This way you can avoid some motivation-draining monsters from appearing.
 
 
 
