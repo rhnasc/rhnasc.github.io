@@ -5,6 +5,8 @@ date:   2018-06-25 02:14:02 -0300
 categories: automation golang lamba portuguese
 ---
 
+> **Aviso:** este cliente não funciona mais com o 2FA do Nubank :( se você criou uma solução que funciona com esse update, me manda para eu linkar no artigo! 😎
+
 Quem gosta de passar uma noite todo mês revisando gastos e preenchendo planilhas? Bom seria se essas planilhas **se preenchessem sozinhas**, né? 
 
 O que eu gostaria na verdade é que toda a minha vida financeira fosse **automatizada**. Mas vamos lá, um passo de cada vez.
