@@ -5,7 +5,7 @@ date:   2020-04-03 02:14:02 -0300
 categories: automation declarative iac aws
 ---
 
-> **Notice:** esta é uma reprodução originalmente publicada no Linkedin ([link](https://www.linkedin.com/pulse/como-aprender-sobre-privacidade-sendo-um-engenheiro-de-nascimento/))
+> **Nota:** esta é uma reprodução originalmente publicada no Linkedin ([link](https://www.linkedin.com/pulse/como-aprender-sobre-privacidade-sendo-um-engenheiro-de-nascimento/))
 
 ![Photo by Ilyuza Mingazova]({{ "/assets/2020-04-03/window_blind.jpg" | absolute_url }})
 
