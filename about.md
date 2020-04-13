@@ -16,6 +16,6 @@ permalink: /about/
 
 👔 [Linkedin](https://www.linkedin.com/in/rhnascimento/)
 
-🐦 [Twitter](https://twitter.com/maisumafada)
+🐦 [Twitter](https://twitter.com/rhnascimento)
 
 💻 [Github](https://github.com/rhnasc)
