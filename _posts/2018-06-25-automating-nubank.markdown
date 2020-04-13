@@ -18,7 +18,7 @@ Nesse post, vou mostrar como usar a API do Nubank para ir preenchendo um canal d
 
 Se você tem o Nubank, pode ver os dados do seu cartão no [https://app.nubank.com.br/](https://app.nubank.com.br/). Logando, você pode ver uma interface com o histórico de transações, que no caso, é o que queremos fazer scraping.
 
-![Nubank WepApp]({{ "/assets/nubank_webapp.png" | absolute_url }})
+![Nubank WepApp]({{ "/assets/2018-06-25/nubank_webapp.png" | absolute_url }})
 
 A API por trás é restful e stateless, com auth per-request e boas práticas de hypermedia, o que vai facilitar bastante nosso trabalho. Quem já tentou fazer scraping sobre uma API stateful sabe o drama que é 😵
 
@@ -87,13 +87,13 @@ Com o resultado desse filtro, notificarei o meu Slack com [esta package](github.
 
 A package para o slack nada mais é que um wrapper sobre o protocolo de webhooks do Slack. Preciso então adicionar a integração no meu Slack chamada **Incoming WebHooks**.
 
-![App Directory]({{ "/assets/app_directory.png" | absolute_url }})
+![App Directory]({{ "/assets/2018-06-25/app_directory.png" | absolute_url }})
 
 O slack nos dará então uma URL de webhooks que poderemos postar num canal. Estarei postando em um chamado `#nubank`.
 
 Ao rodar a aplicação, o resultado será este, mostrando no Slack uma transação que eu fiz nas últimas 24 horas:
 
-![App Directory]({{ "/assets/automate_all_the_things.png" | absolute_url }})
+![App Directory]({{ "/assets/2018-06-25/automate_all_the_things.png" | absolute_url }})
 
 BOA! 🤩
 
@@ -105,7 +105,7 @@ Agora, teremos que subir o nosso código Go em um AWS lambda. Como o código rod
 
 Seu lambda deve se parecer com este aqui:
 
-![Lambda]({{ "/assets/aws_lambda.png" | absolute_url }})
+![Lambda]({{ "/assets/2018-06-25/aws_lambda.png" | absolute_url }})
 
 No lado esquerdo, estaremos usando o CloudWatch Events como trigger. O motivo disso é que podemos configurá-lo para ser disparado por uma configuração crontab. A que eu estou usando é `cron(0 0 ? * * *)`.
 
@@ -136,7 +136,7 @@ Diferente de outras linguagens de script, a Amazon não disponibiliza um editor 
 
 Usando a dashboard, podemos criar um teste para o lambda que acabamos de configurar. Se tudo der certo, agora o nosso código vai rodar na nuvem, e receberemos novamente o registro da transação pelo canal do Slack :)
 
-![Lambda]({{ "/assets/aws_lambda_success.png" | absolute_url }})
+![Lambda]({{ "/assets/2018-06-25/aws_lambda_success.png" | absolute_url }})
 
 ### Great Success
 
