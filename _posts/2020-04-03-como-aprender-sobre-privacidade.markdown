@@ -25,7 +25,7 @@ Mas antes de falar sobre essas leis, vamos começar abrindo um ponto de discuss�
 
 ### Passo 1: Abra o Netflix 📺
 
-{% youtube iX8GxLP1FHo %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iX8GxLP1FHo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 **The Great Hack** (2019) trata do escândalo protagonizado pelo Facebook e a Cambridge Analytica, quando dados pessoais coletados a partir da rede social foram usados por cientistas de dados para criar conteúdos direcionados para mais de 200 campanhas políticas ao redor do mundo ([fonte](https://www.nation.co.ke/news/politics/How-Cambridge-Analytica-influenced-Kenyan-poll/1064-4349034-le7xbuz/index.html)) - inclusive para a campanha presidencial dos EUA em 2016.
 
