@@ -16,7 +16,7 @@
 title: Tech blog
 email: rhnasc@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  My writings on automation, Golang, and random tech.
+  My writings on infosec, product, reliability, and random tech.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  rhnasc
