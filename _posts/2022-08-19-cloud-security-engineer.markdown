@@ -25,7 +25,6 @@ O conhecimento técnico em Cloud e em Sec (CloudSec🤪) é útil exatamente den
 
 Tomemos por exemplo o conhecido hack do CapitalOne (2019). O post abaixo fala em _SSRF_, _IMDS_ e _privileged AWS keys_. Se entendermos, por exemplo, a forma como um SSRF é introduzido e explorado, vamos entender mais do que apenas o mecanismo de ataque - entendemos melhor o potencial **risco** dessa vulnerabilidade nossa organização.
 
-<!-- {% linkpreview "https://blog.appsecco.com/an-ssrf-privileged-aws-keys-and-the-capital-one-breach-4c3c2cded3af" %} -->
 <div class="jekyll-linkpreview-wrapper">
   <div class="jekyll-linkpreview-wrapper-inner">
     <div class="jekyll-linkpreview-content">
@@ -58,7 +57,6 @@ _Least-privilege_ é daqueles problemas que parece que nunca podem ser resolvido
 
 Trata-se de uma automação que entende o uso histórico das aplicações e remove gradualmente aqueles privilégios que ela não mais usa!
 
-<!-- {% linkpreview "https://netflixtechblog.com/introducing-aardvark-and-repokid-53b081bf3a7e" %} -->
 <div class="jekyll-linkpreview-wrapper">
   <div class="jekyll-linkpreview-wrapper-inner">
     <div class="jekyll-linkpreview-content">
@@ -83,7 +81,6 @@ Trata-se de uma automação que entende o uso histórico das aplicações e remo
 
 Outro exemplo, um pipeline de detecção e _threat hunting_ usando ferramentas de dados:
 
-<!-- {% linkpreview "https://www.linkedin.com/pulse/socless-detection-team-netflix-alex-maestretti/" %} -->
 <div class="jekyll-linkpreview-wrapper">
   <div class="jekyll-linkpreview-wrapper-inner">
     <div class="jekyll-linkpreview-content">
@@ -117,7 +114,6 @@ Principalmente nos primeiros anos de experiência, o baixo nível parece indomá
 
 Isso é especialmente importante porque, hoje, várias das mais importantes features de segurança são entregues a nível de infraestrutura. Um eBPF que permite observabilidade de conexões, um service mesh baseado em Envoy que te permite construir identidade de serviços em produção.
 
-<!-- {% linkpreview "https://spiffe.io/" %} -->
 <div class="jekyll-linkpreview-wrapper">
   <div class="jekyll-linkpreview-wrapper-inner">
     <div class="jekyll-linkpreview-content">
