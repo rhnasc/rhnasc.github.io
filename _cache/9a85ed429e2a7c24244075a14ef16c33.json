@@ -1,0 +1,7 @@
+{
+    "title": "SPIFFE – Secure Production Identity Framework for Everyone",
+    "url": "https://spiffe.io/",
+    "description": "SPIFFE and SPIRE provide strongly attested, cryptographic identities to workloads across a wide variety of platforms",
+    "image": "https://spiffe.io/img/spiffe-turtle.svg",
+    "domain": "spiffe.io"
+}
